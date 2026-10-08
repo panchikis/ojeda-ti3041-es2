@@ -19,3 +19,13 @@ Necesité ayuda para poder conectar mysql, no me funcionaba
 prompt: le mandé la iamgen de error
 
 respuesta: me recomendó bajar la versión de django para hacerla compatible con la versión de mariadb que viene con xampp
+
+petición 4
+Le pregunté por el error que me decía en la consola luego de hacer migraciones
+
+promt: le adjunté la imagen preguntando qué significa
+respuesta: me dijo que era una advertencia de que mariadb me recortará datos si no le pongo dentro de settings el código
+    'charset': 'utf8mb4',
+    'sql_mode': 'STRICT_TRANS_TABLES' 
+
+    
