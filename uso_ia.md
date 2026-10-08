@@ -1,5 +1,7 @@
 Uso de IA evaluación 2 Back End
 
+Parte 1
+
 Petición 1
 Necesitaba ayuda para entender cómo usar venv porque hasta ahora solo había visto que usemos pipenv entonces también consulté por su diferencia, le pregunté a Gemini.
 
@@ -42,3 +44,12 @@ No vi los cambios en la base de datos y le pregunté qué pasó
 prompt: por qué no puedo ver los datos en la base de datos
 
 respuesta: me dijo que debía poner python manage.py loaddata productos.json
+
+
+Parte 2
+
+La ayuda de la IA esta vez fue crucial para poder continuar con mi trabajo, al no poder acceder a la base de datos, yo no sabía qué hacer, con su guía pude saber que tenía que bajar la versión de django y eso no se me había ocurrido y tampoco sabía cómo hacer, también me fue de mucha ayuda por lo de venv, al haber usado solo el pipenv antes no sabía cómo proceder con este entorno, también me ayudo su explicación simple para entender su diferencia, en lo que sí que me ayudó demasiado fue en pasar mis productos al fixture, este código era muy complicado y su ayuda fue bastante útil para poder hacerlo rápido y sin errores de mi parte, lo que sí me pasó es que me costó entender cómo fue que lo hizo, tuve que releer el código varias veces en views.py y en el archivo de fixture, son códigos confusos que me habrían tomado mucho tiempo para escribirlos correctamente, la IA me ahorró muchas horas de buscar cómo hacerlo.
+
+Usuarios
+- Superusuario: admin / alvarito2026
+- Cliente: clientedemo / demo1234
