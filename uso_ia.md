@@ -12,3 +12,10 @@ Necesité ayuda porque al intentar activar venv me dio error.
 Prompt: Le mandé la imagen de error
 
 Respuesta: Me dijo que se debe a los permisos de Windows, me recomendó que ponga un comando para ignorarlo temporalmente, lo hice y me dejó activar el entorno.
+
+Petición 3
+Necesité ayuda para poder conectar mysql, no me funcionaba
+
+prompt: le mandé la iamgen de error
+
+respuesta: me recomendó bajar la versión de django para hacerla compatible con la versión de mariadb que viene con xampp
