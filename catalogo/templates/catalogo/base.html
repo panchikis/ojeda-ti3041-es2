@@ -34,7 +34,10 @@
                 </form>
                 {% if request.session.usuario %}
                     <span class="sesion">Hola, {{ request.session.nombre }}</span>
-                    <a class="icono-accion accion-salir" href="{% url 'cuentas:salir' %}">Salir</a>
+                    <form class="form-salir" method="post" action="{% url 'cuentas:salir' %}">
+                        {% csrf_token %}
+                        <button class="icono-accion accion-salir" type="submit">Salir</button>
+                    </form>
                 {% else %}
                     <a class="icono-accion accion-ingresar" href="{% url 'cuentas:ingresar' %}">Ingresar</a>
                 {% endif %}

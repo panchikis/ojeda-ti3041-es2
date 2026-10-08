@@ -24,6 +24,7 @@ a:hover { color: var(--orange-dark); }
 .navegacion a { color: #c5cdca; font-size: .85rem; padding: .6rem 0; }
 .navegacion a.activo { border-bottom: 2px solid var(--orange); color: white; }
 .acciones-cabecera { align-items: center; color: #c5cdca; display: flex; gap: 1rem; }
+.form-salir { display: contents; }
 .ubicacion { font-size: .75rem; }
 .busqueda { align-items: center; border: 1px solid #71807b; display: flex; height: 2.25rem; }
 .busqueda:focus-within { border-color: #f4a33a; }

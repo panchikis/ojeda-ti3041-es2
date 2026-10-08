@@ -1,51 +1,20 @@
-import json
-
-from django.contrib.auth.hashers import check_password
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
 
 
-USUARIOS_JSON = r"""
-[
-  {
-    "usuario": "admin",
-    "nombre": "Administrador",
-    "rol": "admin",
-    "password": "alvarito2026"
-  },
-  {
-    "usuario": "cliente",
-    "nombre": "Cliente Demo",
-    "rol": "cliente",
-    "password": "demo1234"
-  }
-]
-"""
-
-usuarios = json.loads(USUARIOS_JSON)
-
-
-def buscarUsuario(nombreUsuario):
-    for u in usuarios:
-        if u["usuario"] == nombreUsuario:
-            return u
-    return None
-
-
 def ingresar(request):
-  
     if request.method == "POST":
         nombreUsuario = request.POST.get("usuario", "").strip()
         clave = request.POST.get("password", "")
 
-        u = buscarUsuario(nombreUsuario)
+        usuario = authenticate(request, username=nombreUsuario, password=clave)
 
-        if u is not None and clave == u["password"]:
-            request.session["usuario"] = u["usuario"]
-            request.session["nombre"] = u["nombre"]
-            request.session["rol"] = u["rol"]
+        if usuario is not None:
+            login(request, usuario)
+            request.session["usuario"] = usuario.get_username()
+            request.session["nombre"] = usuario.get_full_name() or usuario.get_username()
+            request.session["rol"] = "admin" if usuario.is_staff else "cliente"
             return redirect("catalogo:lista")
-
-
         contexto = {
             "error": "Usuario o contraseña incorrectos.",
             "usuario": nombreUsuario,
@@ -56,5 +25,6 @@ def ingresar(request):
 
 
 def salir(request):
-    request.session.flush()
+    if request.method == "POST":
+        logout(request)
     return redirect("catalogo:inicio")

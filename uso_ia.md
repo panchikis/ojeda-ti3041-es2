@@ -24,8 +24,21 @@ petición 4
 Le pregunté por el error que me decía en la consola luego de hacer migraciones
 
 promt: le adjunté la imagen preguntando qué significa
+
 respuesta: me dijo que era una advertencia de que mariadb me recortará datos si no le pongo dentro de settings el código
     'charset': 'utf8mb4',
     'sql_mode': 'STRICT_TRANS_TABLES' 
 
-    
+Petición 5
+Le pedí ayuda a Copilot para crear el fixture json directamente en mi código
+
+prompt: genera una fixture JSON de Django para mis modelos catalogo.Categoria y catalogo.Producto, con los 40 productos de ferretería que están en views.py. Categoria tiene solo nombre, Producto tiene nombre, stock, precio, categoria, en la ForeignKey va el id de la categoría, en la imagen coloca la ruta completa. Primero haz las categorías, después los productos, por el tema de la FK, no olvides mantener los mismos nombres, precios y stock y quitar los json de views.py
+
+respuesta: hizo lo que le pedí 
+
+Peticion 6
+No vi los cambios en la base de datos y le pregunté qué pasó
+
+prompt: por qué no puedo ver los datos en la base de datos
+
+respuesta: me dijo que debía poner python manage.py loaddata productos.json

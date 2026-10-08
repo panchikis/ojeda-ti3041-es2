@@ -44,7 +44,7 @@
         {% for producto in destacados %}
             <article class="producto-card {% if producto.stock == 0 %}agotado{% endif %}">
                 <a class="producto-imagen" href="{% url 'catalogo:detalle' producto.id %}">
-                    <img src="{{ producto.imagen_local }}" alt="{{ producto.nombre }}" loading="lazy"
+                    <img src="{{ producto.imagen }}" alt="{{ producto.nombre }}" loading="lazy"
                          onerror="this.hidden=true; this.parentElement.classList.add('sin-imagen');">
                     <span class="numero-producto">{{ producto.id|stringformat:"02d" }}</span>
                     {% if producto.stock == 0 %}<span class="marca-agotado">Agotado</span>{% endif %}

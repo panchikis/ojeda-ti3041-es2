@@ -8,7 +8,7 @@
 
     <article class="ficha">
         <div class="ficha-visual">
-            <img src="{{ producto.imagen_local }}" alt="{{ producto.nombre }}" onerror="this.hidden=true; this.parentElement.classList.add('sin-imagen');">
+            <img src="{{ producto.imagen }}" alt="{{ producto.nombre }}" onerror="this.hidden=true; this.parentElement.classList.add('sin-imagen');">
             <span class="numero-producto">PRODUCTO {{ producto.id|stringformat:"02d" }}</span>
         </div>
         <div class="ficha-contenido">
@@ -57,4 +57,3 @@
     </article>
 
 {% endblock %}
-
